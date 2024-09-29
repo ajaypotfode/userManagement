@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   const [data, setData] = useState([])
   useEffect(() => {
-    axios.get('https://usermanagement-eg8m.onrender.com/')
+    axios.get('http://localhost:5000/users')
       .then(res => setData(res.data))
       .catch(err => console.log(err))
   }, [])
