@@ -16,14 +16,14 @@ const UpdateUser = () => {
   })
 
   useEffect(() => {
-    axios.get('http://localhost:5000/users/'+id)
+    axios.get('https://usermanagement-eg8m.onrender.com/users/'+id)
       .then(res => setValues(res.data))
       .catch(err => console.log(err))
   }, [])
    
   const handleUpdate=(e)=>{
     e.preventDefault()
-    axios.put('http://localhost:5000/users/'+id,values)
+    axios.put('https://usermanagement-eg8m.onrender.com/users/'+id,values)
     .then(res =>console.log(res.data)
     )
     .catch(err => console.log(err))

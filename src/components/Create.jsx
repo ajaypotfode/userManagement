@@ -14,7 +14,7 @@ const AddUser = () => {
    
   const handleSubmit=(e)=>{
     e.preventDefault()
-    axios.post('http://localhost:5000/users',values)
+    axios.post('https://usermanagement-eg8m.onrender.com/users',values)
     .then(res =>console.log(res.data)
     )
     .catch(err => console.log(err))

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   const [data, setData] = useState([])
   useEffect(() => {
-    axios.get('http://localhost:5000/users')
+    axios.get('https://usermanagement-eg8m.onrender.com/users')
       .then(res => setData(res.data))
       .catch(err => console.log(err))
   }, [])
@@ -14,7 +14,7 @@ const Home = () => {
   const handleDelete=(id)=>{
     const confirm= window.confirm("would you like to delete?")
        if (confirm) {     
-        axios.delete('http://localhost:5000/users/'+id)
+        axios.delete('https://usermanagement-eg8m.onrender.com/users/'+id)
        .then(res=>{
         alert("user Deleted Successfully")
            window.location.reload()
