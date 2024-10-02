@@ -1,12 +1,6 @@
 {
   "users": [
     {
-      "id": "2",
-      "name": "jany",
-      "email": "jany.smith@example.com",
-      "contact": "+1234567891"
-    },
-    {
       "id": "5",
       "name": "David Wilson",
       "email": "david.wilson@example.com",
