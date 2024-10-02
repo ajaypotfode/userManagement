@@ -9,7 +9,7 @@ const UserCard = () => {
   const {id}=useParams()
 
   useEffect(() => {
-    axios.get('https://usermanagement-eg8m.onrender.com/users/'+id)
+    axios.get('https://usermanagementsystem-f9g2.onrender.com/users/'+id)
       .then(res => setData(res.data))
       .catch(err => console.log(err))
   }, [])
