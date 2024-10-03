@@ -12,7 +12,7 @@ const UserCard = () => {
     axios.get('https://usermanagementsystem-f9g2.onrender.com/users/'+id)
       .then(res => setData(res.data))
       .catch(err => console.log(err))
-  }, [])
+  }, [id])
   return (
     <div className="d-flex justify-content-center align-items-center vh-100">
   <div className="card" style={{ width: '24rem' }}>

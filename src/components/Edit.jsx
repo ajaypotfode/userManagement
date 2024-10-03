@@ -19,7 +19,7 @@ const UpdateUser = () => {
     axios.get('https://usermanagementsystem-f9g2.onrender.com/users/'+id)
       .then(res => setValues(res.data))
       .catch(err => console.log(err))
-  }, [])
+  }, [id])
    
   const handleUpdate=(e)=>{
     e.preventDefault()
