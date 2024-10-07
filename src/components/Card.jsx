@@ -11,7 +11,7 @@ const UserCard = () => {
   useEffect(() => {
    (async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/users/${id}`);
+        const res = await axios.get(`https://usermanagementsystem-f9g2.onrender.com/users/${id}`);
         setData(res.data);
       } catch (err) {
         console.log('Error fetching data:', err);

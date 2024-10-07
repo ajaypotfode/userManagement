@@ -8,7 +8,7 @@ const Home = () => {
   useEffect(() => {
     (async () => {
       try {
-        const res = await axios.get('http://localhost:5000/users');
+        const res = await axios.get('https://usermanagementsystem-f9g2.onrender.com/users');
         setData(res.data);
       } catch (err) {
         console.log('Error fetching users:', err);
@@ -20,7 +20,7 @@ const Home = () => {
     const confirm = window.confirm("would you like to delete?")
     if (confirm) {
       try {
-        await axios.delete(`http://localhost:5000/users/${id}`);
+        await axios.delete(`https://usermanagementsystem-f9g2.onrender.com/users/${id}`);
         alert("User deleted successfully");
         window.location.reload(); 
       } catch (err) {

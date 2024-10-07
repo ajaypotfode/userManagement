@@ -18,7 +18,7 @@ const UpdateUser = () => {
   useEffect(() => {
     (async () => {
       try {
-        const res = await axios.get('http://localhost:5000/users/' + id)
+        const res = await axios.get('https://usermanagementsystem-f9g2.onrender.com/users/' + id)
         setValues(res.data)
       } catch (err) {
         console.log('Error fetching data:', err);
@@ -29,7 +29,7 @@ const UpdateUser = () => {
   const handleUpdate =async (e) => {
     e.preventDefault()
         try {
-          const res = await axios.put('http://localhost:5000/users/' + id, values)
+          const res = await axios.put('https://usermanagementsystem-f9g2.onrender.com/users/' + id, values)
           console.log(res.data);
 
           navigate('/')
