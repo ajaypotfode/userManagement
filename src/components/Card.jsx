@@ -9,9 +9,14 @@ const UserCard = () => {
   const {id}=useParams()
 
   useEffect(() => {
-    axios.get('https://usermanagementsystem-f9g2.onrender.com/users/'+id)
-      .then(res => setData(res.data))
-      .catch(err => console.log(err))
+   (async () => {
+      try {
+        const res = await axios.get(`http://localhost:5000/users/${id}`);
+        setData(res.data);
+      } catch (err) {
+        console.log('Error fetching data:', err);
+      }
+    })()
   }, [id])
   return (
     <div className="d-flex justify-content-center align-items-center vh-100">

@@ -1,22 +1,22 @@
 {
   "users": [
     {
-      "id": "5",
-      "name": "David Wilson",
-      "email": "david.wilson@example.com",
-      "contact": "+1234567894"
-    },
-    {
       "id": "6",
-      "name": "Sarah Brown",
+      "name": "Sarah ",
       "email": "sarah.brown@example.com",
-      "contact": "+1234567895"
+      "contact": "+1234567898"
     },
     {
-      "id": "7",
-      "name": "naman",
-      "email": "chris.lee@example.com",
+      "id": "49ee",
+      "name": "aman",
+      "email": "ajaypotfode3277@gmail.com",
       "contact": "+1234567896"
+    },
+    {
+      "id": "f1c1",
+      "name": "ajay",
+      "email": "coder@gmail.com",
+      "contact": "78908898978"
     }
   ]
 }

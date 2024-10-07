@@ -5,31 +5,39 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 const UpdateUser = () => {
-  const navigate=useNavigate()
+  const navigate = useNavigate()
   // const [data, setData] = useState([])
-  const {id}=useParams()
+  const { id } = useParams()
 
-  const [values, setValues]=useState({
-    name:'',
-    email:'',
-    contact:''
+  const [values, setValues] = useState({
+    name: '',
+    email: '',
+    contact: ''
   })
 
   useEffect(() => {
-    axios.get('https://usermanagementsystem-f9g2.onrender.com/users/'+id)
-      .then(res => setValues(res.data))
-      .catch(err => console.log(err))
+    (async () => {
+      try {
+        const res = await axios.get('http://localhost:5000/users/' + id)
+        setValues(res.data)
+      } catch (err) {
+        console.log('Error fetching data:', err);
+      }
+    })()
   }, [id])
-   
-  const handleUpdate=(e)=>{
+
+  const handleUpdate =async (e) => {
     e.preventDefault()
-    axios.put('https://usermanagementsystem-f9g2.onrender.com/users/'+id,values)
-    .then(res =>console.log(res.data)
-    )
-    .catch(err => console.log(err))
-    navigate('/')
+        try {
+          const res = await axios.put('http://localhost:5000/users/' + id, values)
+          console.log(res.data);
+
+          navigate('/')
+        } catch (error) {
+
+        }
   }
-    
+
   return (
     <div className="d-flex justify-content-center align-items-center vh-100">
       <div className="card p-4" style={{ width: '24rem' }}>
@@ -37,24 +45,24 @@ const UpdateUser = () => {
         <form onSubmit={handleUpdate}>
           <div className="form-group">
             <label htmlFor="name">Name</label>
-            <input type="text" className="form-control" id="name" 
-                       placeholder="Enter name"
-                       value={values.name}
-                       onChange={e=>setValues({...values,name:e.target.value})} />
+            <input type="text" className="form-control" id="name"
+              placeholder="Enter name"
+              value={values.name}
+              onChange={e => setValues({ ...values, name: e.target.value })} />
           </div>
           <div className="form-group">
             <label htmlFor="email">Email</label>
             <input type="email" className="form-control" id="email"
-                    placeholder="Enter email"
-                    value={values.email}
-                    onChange={e=>setValues({...values,email:e.target.value})} />
+              placeholder="Enter email"
+              value={values.email}
+              onChange={e => setValues({ ...values, email: e.target.value })} />
           </div>
           <div className="form-group">
             <label htmlFor="contact">Contact</label>
-            <input type="text" className="form-control" id="contact" 
-                         placeholder="Enter contact" 
-                         value={values.contact}
-                         onChange={e=>setValues({...values,contact:e.target.value})}/>
+            <input type="text" className="form-control" id="contact"
+              placeholder="Enter contact"
+              value={values.contact}
+              onChange={e => setValues({ ...values, contact: e.target.value })} />
           </div>
           <div className="d-flex justify-content-between mt-4 ">
             <button type="submit" className="btn btn-primary">Update</button>
@@ -63,7 +71,7 @@ const UpdateUser = () => {
         </form>
       </div>
     </div>
-      );
+  );
 };
 
 export default UpdateUser;
