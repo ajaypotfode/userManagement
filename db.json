@@ -1,22 +1,16 @@
 {
   "users": [
     {
-      "id": "6",
-      "name": "Sarah ",
-      "email": "sarah.brown@example.com",
-      "contact": "+1234567898"
-    },
-    {
-      "id": "49ee",
-      "name": "aman",
-      "email": "ajaypotfode3277@gmail.com",
-      "contact": "+1234567896"
-    },
-    {
       "id": "f1c1",
       "name": "ajay",
       "email": "coder@gmail.com",
       "contact": "78908898978"
+    },
+    {
+      "id": "8e43",
+      "name": "msjshjk",
+      "email": "coder@gmail.com",
+      "contact": "788988786787"
     }
   ]
 }

@@ -15,7 +15,7 @@ const AddUser = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {  
-      const response = await axios.post('https://usermanagementsystem-f9g2.onrender.com/users', values);
+      const response = await axios.post('http://localhost:5000/users', values);
       console.log(response.data);
       navigate('/');
     } catch (err) {
